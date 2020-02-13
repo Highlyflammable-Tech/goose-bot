@@ -25,20 +25,6 @@ class Tag {
     return this;
   }
 
-  addAliases(alias){
-    if(alias===undefined)throw "No alias added";
-    this.aliases.push(alias)
-    return this;
-  }
-
-  remodeAliases(alias){
-    if(alias===undefined)throw "No alias added"
-    let index = this.aliases.indexOf(alisa)
-    if(index===-1)throw `${alias} not found`
-    this.aliases.split(index,1)
-    return this;
-  }
-
   create(db){
     if(db===undefined)throw "No database passed";
     //checking if it already a tag//
