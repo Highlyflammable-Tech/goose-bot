@@ -1,4 +1,4 @@
-const {Tag}=require("../../structures/index.js")
+const {Tag} =require("../../structures/index.js")
 module.exports = {
 	name: 'create-tag',
 	description: 'creates a tag',
@@ -15,7 +15,7 @@ module.exports = {
   //--code goes here--//
 	let name = args.shift()
 	let message = args.join(" ")
-	const tag = New Tag()
+	const tag = new Tag()
 		.owner(msg.author.id)
 		.date()
 		.name(name)
