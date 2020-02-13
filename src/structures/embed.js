@@ -29,7 +29,7 @@ class Embed {
     return this;
   }
 
-  color(color = 15440692) {
+  color(color = 13873944) {
     this.embed.color = (color[0]==="#") ? parseInt(color.replace("#", ""), 16) : color
     return this;
   }
