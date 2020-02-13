@@ -12,7 +12,7 @@ module.exports = {
   developer: false,
 	nsfw: false,
 	execute(msg, args, client, db, config) {
-  //--code goes here--//
+		if(args.length<2)return client.createMessage(msg.channel.id,"You didn't provide the correct arguments\n`<name> <message>`\nNames can only be one word")
 	let name = args.shift()
 	let message = args.join(" ")
 	const tag = new Tag()
@@ -21,7 +21,7 @@ module.exports = {
 		.name(name)
 		.message(message)
 		.create(db)
-		if(tag==="Tag created") client.createMessage(msg.channel.id,`${name} has been created by \`${msg.author.username}\``)
 		console.log(tag);
+		if(tag==="0") client.createMessage(msg.channel.id,`${name} has been created by \`${msg.author.username}\``)
 	},
 };

@@ -3,7 +3,7 @@ module.exports = {
 	description: 'description',
 	args: true,//if it needs arguments or not
 	argsnum: 0,//how many arguments (bit broken)
-  usage:"<What is being edited>",//what the arguments should be
+  usage:"<Message>",//what the arguments should be
 	cooldown: 5,
   aliases: ['aliases'],//other ways to call the command
   disabled: false,
