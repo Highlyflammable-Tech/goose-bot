@@ -28,7 +28,10 @@ module.exports = {
       if(result!==null)return client.createMessage(msg.channel.id,"That tag has already been made!")
       //creating tag//
       db.db("data").collection("tags").insertOne(tag,function (err,res) {
-        if(err)throw err;
+        if(err){
+					return client.createMessage(msg.channel.id,"There was a problem creating tag")
+					console.error(err);
+				}
 				client.createMessage(msg.channel.id,`${name} has been created by \`${msg.author.username}\``)
       })
     })
