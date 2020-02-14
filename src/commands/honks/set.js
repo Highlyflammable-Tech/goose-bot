@@ -39,7 +39,7 @@ module.exports = {
           .author(user.username,user.avatarURL)
           .description(`${user.username} balance is now ${points}\nOld balance: ${res.points}`)
           .footer(`Updated by ${msg.author.username}`)
-        client.createMessage(msg.channel.id,embed)
+        .send(client,msg)
       }
     })
   },

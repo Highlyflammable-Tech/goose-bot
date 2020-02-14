@@ -5,7 +5,7 @@ module.exports = {
 	args: false,//if it needs arguments or not
 	argsnum: 0,//how many arguments (bit broken)
   usage:"<usage here>",//what the arguments should be
-	cooldown: 5,
+	cooldown: 0.1,
   aliases: [],//other ways to call the command
   disabled: false,
   reason: "reason here!", // the reaso why its disabled
@@ -19,9 +19,9 @@ module.exports = {
 			 .title("Here are my commands")
 			 .description(`Use \`${config.prefix}Help [Category]\`\nE.g. \`${config.prefix}Help Tag\`\n\`<>\` are needed for the command\n\`[]\` are need for the command`)
 			 .addField("__General Commands__","`Help` Shows you this beautiful message\n")
-			 .addField("__Tag Commands__","`Create <name> <message>` Creates a new tag. Names can only be one word\n`Delete <Name>` Deletes a tag\n`Edit <New Message>` Edits the message on a tag\n`Info <Name>` Info about the tag\nTag <Name>` Shows the tag")
-			 .addField("__Honks__","`View [@user]` Shows the number of honks the user has")
-			client.createMessage(msg.channel.id,embed)
+			 .addField("__Tag Commands__","`Create <name> <message>` Creates a new tag. Names can only be one word\n`Delete <Name>` Deletes a tag\n`Edit <New Message>` Edits the message on a tag\n`Info <Name>` Info about the tag\n`Tag <Name>` Shows the tag")
+			 .addField("__Honks__","`Honks [@user]` Shows the number of honks the user has\n`Add <@user> <Number of honks>` This can only be used by users with admin permission\n`Remove <@user> <Number of honks>` This can only be used by users with admin permission\n`Set <@user> <Number of honks>` This can only be used by users with admin permission")
+			 .send(client,msg)
     }
 	},
 };

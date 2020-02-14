@@ -26,6 +26,7 @@ module.exports = {
         .timestamp(res.created)
         .description(`Created by : <@${res.owner}>\nName: ${res.name}`)
         .footer("Created ->")
+				.send(client,msg)
       client.createMessage(msg.channel.id,embed)
     })
 	},

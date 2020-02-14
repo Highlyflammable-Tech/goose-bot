@@ -14,7 +14,7 @@ module.exports = {
   execute(msg, args, client, db, config) {
     //--code goes here--//
     if(msg.channel.guild.members.get(msg.author.id).permission.json.administrator !==true)return client.createMessage(msg.channel.id,"Sorry you can'use this command")
-    
+
     let user = (msg.mentions.length === 0) ? msg.author : msg.mentions[0]
     let points = parseInt(args[1])
     db.db("data").collection("points").findOne({
@@ -39,7 +39,7 @@ module.exports = {
           .author(user.username,user.avatarURL)
           .description(`${user.username} has lost ${points}\nOld balance: ${res.points}\nNew balance: ${res.points-points}`)
           .footer(`Updated by ${msg.author.username}`)
-        client.createMessage(msg.channel.id,embed)
+        .send(client,msg)
       }
     })
   },

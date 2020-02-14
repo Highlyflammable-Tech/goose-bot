@@ -25,7 +25,7 @@ module.exports = {
 				.timestamp()
 				.author(user.username,user.avatarURL)
 				.addField("Balance",res.points +" "+ ((res.points===1) ? "honk" : "honks"))
-			client.createMessage(msg.channel.id,embed)
+			.send(client,msg)
 		})
 	},
 };

@@ -96,6 +96,7 @@ module.exports = function(client, db, config) {
 
 function not_command(msg, db, client, config) {
   let points = Math.floor(Math.random() * Math.floor(3))
+  if(msg.content.startsWith("honk"))point*=2
   db.db("data").collection("points").findOne({
     user_id:msg.author.id
   },function (err,res) {
