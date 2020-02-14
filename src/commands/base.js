@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'name',
 	description: 'description',
-	args: false,//if it needs arguments or not
+	args: false,//if it needs arguments or not (bit broken)
 	argsnum: 0,//how many arguments (bit broken)
   usage:"<usage here>",//what the arguments should be
 	cooldown: 5,
