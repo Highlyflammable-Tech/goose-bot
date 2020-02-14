@@ -1,7 +1,7 @@
 var http = require('http')
 var createHandler = require('github-webhook-handler')
 const github_stuff= require("./github.js")
-module.expots = function(client, db, config) {
+module.exports = function(client, db, config) {
   var handler = createHandler({
     path: '/webhook',
     secret: config.webhook_token
