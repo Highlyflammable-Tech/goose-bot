@@ -20,8 +20,17 @@ module.exports = {
 		.date()
 		.name(name)
 		.message(message)
-		.create(db)
-		console.log(tag);
-		if(tag==="0") client.createMessage(msg.channel.id,`${name} has been created by \`${msg.author.username}\``)
+    //checking if it already a tag//
+    db.db("data").collection("tags").findOne({
+      name:tag.name
+    },function (err,result) {
+      if(err)throw err;
+      if(result!==null)return client.createMessage(msg.channel.id,"That tag has already been made!")
+      //creating tag//
+      db.db("data").collection("tags").insertOne(tag,function (err,res) {
+        if(err)throw err;
+				client.createMessage(msg.channel.id,`${name} has been created by \`${msg.author.username}\``)
+      })
+    })
 	},
 };
