@@ -1,5 +1,6 @@
 var http = require('http')
 var createHandler = require('github-webhook-handler')
+const github_stuff= require("./github.js")
 module.expots = function(client, db, config) {
   var handler = createHandler({
     path: '/webhook',
@@ -13,14 +14,5 @@ module.expots = function(client, db, config) {
     })
     .listen(3000 || process.env.PORT)
 
-  handler.on('error', (error) => {
-    console.error(error);
-  })
-
-  handler.on('issues',(event) => {
-    if(event.payload.action==="opened"){
-      //addd msg to issue
-    }else if(event.payload.action ==="labeled")
-
-  })
+    github_stuff(handler,http,config)
 }
