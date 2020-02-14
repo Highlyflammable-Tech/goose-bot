@@ -8,6 +8,10 @@
   "license": "GPL-3.0",
   "private": null,
   "dependencies": {
-    "eris": "^0.11.2"
+    "eris": "^0.11.2",
+    "mongodb": "^3.5.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
