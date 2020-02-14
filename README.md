@@ -9,4 +9,7 @@ The bot was built in Node js using  [Mongo](https://www.mongodb.com/) and [Eris]
 3. Now you can just run `npm start` and the bot is running.
 
 ___
+#### Going to add
+- [ ] Points
+___
 Created by [♛ ᖴᒪᗩᙏᙏᗩᙖᒪᙓᗩSSᗩSSIᑎ® ♛#4701](https://github.com/flamableassassin)
