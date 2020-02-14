@@ -12,7 +12,7 @@ module.exports = function(client, db, config) {
     var prefix =config.prefix
     if (message.content.startsWith(prefix)) var args = message.content.slice(prefix.length).toLowerCase().split(/ +/);
     else if (message.content.startsWith(client.user)) var args = message.content.slice(`<@${client.user.id}>`.length).toLowerCase().split(/ +/);
-    else return;
+    else return not_command(message, db, client, config);
     //args stuff//
     if (args[0] == "") args.shift()
     const commandName = args.shift();
@@ -95,5 +95,23 @@ module.exports = function(client, db, config) {
 };
 
 function not_command(msg, db, client, config) {
-
+  let points = Math.floor(Math.random() * Math.floor(3))
+  db.db("data").collection("points").findOne({
+    user_id:msg.author.id
+  },function (err,res) {
+    if(res===null){
+      db.db("data").collection("points").insertOne({
+        user_id:msg.author.id,
+        points:points
+      })
+    }else {
+      db.db("data").collection("points").updateOne({
+        user_id:msg.author.id
+      },{
+        $set:{
+          points:res.points+points
+        }
+      })
+    }
+  })
 }
