@@ -5,7 +5,7 @@ module.exports = {
 	args: true,
 	argsnum: 0,
   usage:"<name> <message>\n`Names can only be one word",
-	cooldown: 2,
+	cooldown: 3,
   aliases: ['ct'],
   disabled: false,
   reason: "reason here!",
