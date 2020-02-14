@@ -8,5 +8,6 @@ module.exports = {
   token: {
     main: "Main_bot_token_here",
     dev: "dev_bot_here",
-  }
+  },
+  webhook_token:"token_here"
 }

@@ -1,3 +1,4 @@
 node_modules
 yarn.lock
 config.js
+yarn-error.log
