@@ -9,5 +9,7 @@ module.exports = {
     main: "Main_bot_token_here",
     dev: "dev_bot_here",
   },
-  suggestion_channel:"channel_id"//this will be used for suggestions
+  suggestion_channel:"channel_id",//this will be used for suggestions
+  github_token:"user_token",//this is used for all of the request to github  how to get ->(https://github.com/settings/tokens)
+  webhook_secret:"secret"//this is used to make sure that the webhooks come from github
 }
