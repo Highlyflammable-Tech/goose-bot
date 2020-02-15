@@ -8,16 +8,16 @@
   "license": "GPL-3.0",
   "private": null,
   "dependencies": {
-    "@octokit/rest": "^16.43.1",
     "eris": "^0.11.2",
+    "github-webhook-handler": "^1.0.0",
     "mongodb": "^3.5.3",
-    "github-webhook-handler": "^1.0.0"
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
   },
   "scripts": {
-    "start":"node bot.js",
-    "build":"node database-setup.js"
+    "start": "node bot.js",
+    "build": "node database-setup.js"
   }
 }
