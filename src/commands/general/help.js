@@ -16,7 +16,7 @@ module.exports = {
 			const embed = new Embed()
 			 .color()
 			 .timestamp()
-			 .title("Here are my commands")
+			 .title("Here are my commands","https://github.com/flamableassassin/goose-bot")
 			 .description(`Use \`${config.prefix}Help [Category]\`\nE.g. \`${config.prefix}Help Tag\`\n\`<>\` are needed for the command\n\`[]\` are need for the command`)
 			 .addField("__General Commands__","`Help` Shows you this beautiful message\n")
 			 .addField("__Tag Commands__","`Create <name> <message>` Creates a new tag. Names can only be one word\n`Delete <Name>` Deletes a tag\n`Edit <New Message>` Edits the message on a tag\n`Info <Name>` Info about the tag\n`Tag <Name>` Shows the tag")
