@@ -94,7 +94,11 @@ module.exports = function(client, db, config) {
   });
 };
 
-function not_command(msg, db, client, config) {
+async function not_command(msg, db, client, config) {
+  if(msg.channel.id===config.suggestion_channel){
+    await msg.addReaction("👍")
+    await msg.addReaction("👎")
+  }
   let points = Math.floor(Math.random() * Math.floor(3))
   if(msg.content.startsWith("honk"))point*=2
   db.db("data").collection("points").findOne({

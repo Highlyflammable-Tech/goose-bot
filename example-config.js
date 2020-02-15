@@ -9,5 +9,5 @@ module.exports = {
     main: "Main_bot_token_here",
     dev: "dev_bot_here",
   },
-  webhook_token:"token_here"
+  suggestion_channel:"channel_id"//this will be used for suggestions
 }
