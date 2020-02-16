@@ -1,11 +1,11 @@
 class Embed {
-  constructor() {
-    Object.assign(this, {
-      "embed": {
-        "fields": []
-      },
-      "content": ""
-    })
+  constructor(embed = {
+    "embed": {
+      "fields": []
+    },
+    "content": ""
+  }){
+    Object.assign(this, embed)
     return this;
   }
 
@@ -30,7 +30,7 @@ class Embed {
   }
 
   color(color = 13873944) {
-    this.embed.color = (color[0]==="#") ? parseInt(color.replace("#", ""), 16) : color
+    this.embed.color = (color[0] === "#") ? parseInt(color.replace("#", ""), 16) : color
     return this;
   }
 
@@ -75,13 +75,13 @@ class Embed {
     return this;
   }
 
-  send(client,msg){
+  send(client, msg) {
     //random image//
-    let images = ["","","https://file.coffee/pk1hzydPo.gif","","","","https://file.coffee/a4Ww80qFK.png","https://file.coffee/kkLum4nVe.png","https://file.coffee/0QfbTcfdr.png","https://file.coffee/rXFMQIU0S.png","https://file.coffee/CU-GVlaxI.png","https://file.coffee/V41rtFtCm.png","https://file.coffee/ipAyCS-6f.png"]
-    this.embed.image={
+    let images = ["", "", "https://file.coffee/pk1hzydPo.gif", "", "", "", "https://file.coffee/a4Ww80qFK.png", "https://file.coffee/kkLum4nVe.png", "https://file.coffee/0QfbTcfdr.png", "https://file.coffee/rXFMQIU0S.png", "https://file.coffee/CU-GVlaxI.png", "https://file.coffee/V41rtFtCm.png", "https://file.coffee/ipAyCS-6f.png"]
+    this.embed.image = {
       "url": images[Math.floor(Math.random() * Math.floor(images.length))]
     }
-    client.createMessage(msg.channel.id,this)
+    client.createMessage(msg.channel.id, this)
   }
 }
 module.exports = Embed;
