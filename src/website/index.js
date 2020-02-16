@@ -1,7 +1,5 @@
 var http = require('http')
-const {
-  github
-} = require("../../structures/index.js")
+const {github} = require("../../structures/index.js")
 var createHandler = require('github-webhook-handler')
 
 module.exports = function(client, db, config) {
