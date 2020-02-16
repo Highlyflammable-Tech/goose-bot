@@ -9,7 +9,6 @@ module.exports = {
   disabled: false,
   reason: "reason here!", // the reason why its disabled
   developer: false,//bot owner only
-	nsfw: false,//if the command needs to be used in a nsfw channel
 	execute(msg, args, client, db, config) {
   //--code goes here--//
 	},

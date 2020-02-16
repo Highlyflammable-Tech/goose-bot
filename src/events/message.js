@@ -37,15 +37,6 @@ module.exports = function(client, db, config) {
       })
       return;
     }
-    // nsfw //
-    if (!config.dev_mode && command.nsfw && !message.channel.nsfw) {
-      client.createMessage(message.channel.id, `\`${command.name}\` needs to be used in a NSFW channel!`).then((msg) => {
-        setTimeout(function() {
-          msg.delete()
-        }, 7500);
-      })
-      return;
-    }
 
     // args //
     if (command.args) {
@@ -95,5 +86,5 @@ module.exports = function(client, db, config) {
 };
 
 async function not_command(msg, db, client, config) {
-  
+
 }
