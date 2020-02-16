@@ -95,28 +95,5 @@ module.exports = function(client, db, config) {
 };
 
 async function not_command(msg, db, client, config) {
-  if(msg.channel.id===config.suggestion_channel){
-    await msg.addReaction("👍")
-    await msg.addReaction("👎")
-  }
-  let points = Math.floor(Math.random() * Math.floor(3))
-  if(msg.content.startsWith("honk"))point*=2
-  db.db("data").collection("points").findOne({
-    user_id:msg.author.id
-  },function (err,res) {
-    if(res===null){
-      db.db("data").collection("points").insertOne({
-        user_id:msg.author.id,
-        points:points
-      })
-    }else {
-      db.db("data").collection("points").updateOne({
-        user_id:msg.author.id
-      },{
-        $set:{
-          points:res.points+points
-        }
-      })
-    }
-  })
+  
 }

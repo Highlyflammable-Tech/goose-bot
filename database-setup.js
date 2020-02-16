@@ -10,7 +10,7 @@ MongoClient.connect(db_token, {
   if (err) throw err;
   //checking if db is already setup
   let needed_collections = {
-    "points": false,
+    "suggestions": false,
     "tags": false,
   }
   db.db("data").listCollections().toArray(function(err, res) {
