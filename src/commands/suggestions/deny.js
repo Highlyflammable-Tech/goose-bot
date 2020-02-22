@@ -30,7 +30,6 @@ module.exports = {
         .timestamp()
       client.editMessage(config.suggestion_channel, res.msg, embed)
       client.removeMessageReactions(config.suggestion_channel, res.msg)
-      return;
       //deleting from trello if on it//
       if (res.added) {
         client.trello.deleteCard(res.trello.id, function(res) {
