@@ -10,4 +10,8 @@ The bot was built in Node js using  [Mongo](https://www.mongodb.com/) and [Eris]
 4. Now you can just run `npm start` and the bot is running.
 
 ___
+### Ideas that are mostly going to be added
+- [ ] A starboard
+
+___
 Created by [♛ ᖴᒪᗩᙏᙏᗩᙖᒪᙓᗩSSᗩSSIᑎ® ♛#4701](https://github.com/flamableassassin)
