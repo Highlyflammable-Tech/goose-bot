@@ -17,34 +17,33 @@ module.exports = {
     }, async function(err, res) {
       if (err) return client.createMessage(msg.channel.id, "There was a problem finding suggestion")
       if (!res) return client.createMessage(msg.channel.id, "I couldn't find that suggestion")
-      if(res.trello.id==="no")return client.createMessage(msg.channel.id, "That suggest has been denied")
-      await client.addMessageReaction(config.suggestion_channel,res.msg,"🔧")
-      //adding to trello
-
-      if(res.added){
-        try{
-          client.trello.makeRequest("put",`/1/cards/${res.trello.id}/idList`,{value:config.trello.lists.accepted},function (res,response) {
-            if(res!==null){
-              client.createMessage(msg.channel.id,"There was an error moving card on trello")
-              throw res;
+      if (!res.added) {
+        client.getMessage(config.suggestion_channel, res.msg)
+          .then((message) => {
+            try {
+              client.trello.addCard(message.embeds[0].author.name + ": " + res.id, res.suggestion, config.trello.lists.accepted, function(res2, response) {
+                db.db("data").collection("suggestions").updateOne({
+                  msg: res.msg
+                }, {
+                  $set: {
+                    added: true,
+                    trello: {
+                      id: response.id,
+                      list: config.trello.lists.accepted
+                    }
+                  }
+                }, function(err, res) {
+                  if (err) throw err;
+                })
+              })
+            } catch (e) {
+              client.createMessage(msg.channel.id, "There was a problem creating card on trello or updating database")
+              throw e;
             }
-            db.db("data").collection("suggestions").updateOne({
-              id:parseInt(args[0])
-            },{
-              $set:{
-                add_trello:true
-              }
-            },function (err,res) {
-              if(err){
-                client.createMessage(msg.channel.id,"There was problem updating database")
-                throw err;
-              }
-            })
           })
-        }catch (e){
-          throw e;
-        }
       }
+      //adding reaction
+      await client.addMessageReaction(config.suggestion_channel, res.msg, "🔧")
     })
   },
 };
