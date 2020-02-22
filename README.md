@@ -2,6 +2,14 @@
 Goose was made for Samperson's resort a [discord server](https://discord.gg/xZFRmPT) for [goose desktop](https://samperson.itch.io/desktop-goose).
 
 The bot was built in Node js using  [Mongo](https://www.mongodb.com/) and [Eris](https://abal.moe/Eris)
+### Features
+1. Tags
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Easily add, remove and edit tags which makes it easier to send repeating messages with a single command
+
+2. Suggestion
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Integrated with Trello for easy management of suggestions. This can be adapted for bug reports as well
 
 ### Setup
 1. Rename `example-config.js` to `config.js` and change details to what you want.
